@@ -78,3 +78,11 @@ TEST(IterateOver, stress) {
         ASSERT_EQ(i, iter.index());
     }
 }
+
+TEST(IteratorTraits, arrow) {
+    std::map<int, std::string> m { {0, "my"}, {1, "test"} };
+    auto ii = CreateIndexedIterator(m.begin());
+    ++ii;
+    ASSERT_EQ(ii->second, "test");
+}
+
