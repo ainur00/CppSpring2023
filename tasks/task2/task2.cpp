@@ -236,6 +236,7 @@ TEST(Stress, stress) {
     std::vector<Int> data;
     constexpr int len = 1e6;
     constexpr int iterations = 1e4;
+    Int::Reset(1e7);
 
     for (int i = 0; i < len; ++i) {
         data.emplace_back(i);
